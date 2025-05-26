@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ألفا الحديثة | معرض الصور</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+          integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <!--Owl carousel css-->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <!--custom css-->
+    <link rel="stylesheet" href="css/style.css">
+    <!--responsive css-->
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        :root {
+            --primary-color: #2a5d84;
+            --secondary-color: #e74c3c;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: #f8f9fa;
+        }
+
+        .navbar {
+            background: white;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-section {
+            background: linear-gradient(45deg, #f8f9fa 50%, var(--primary-color) 150%);
+            padding: 100px 0;
+        }
+
+        .gallery-img {
+            border-radius: 12px;
+            transition: transform 0.3s;
+            height: 250px;
+            object-fit: cover;
+        }
+
+            .gallery-img:hover {
+                transform: scale(1.03);
+            }
+
+        footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 50px 0;
+        }
+
+        .contact-info li {
+            margin-bottom: 10px;
+        }
+        .gallery-section .card {
+    border: none;
+    transition: transform 0.3s;
+    overflow: hidden;
+}
+
+.gallery-section .card-img-top {
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.gallery-section .card:hover {
+    transform: translateY(-10px);
+}
+
+.gallery-section .card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+.newsletter-form input {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.3);
+    color: white;
+}
+
+.social-links .btn {
+    transition: all 0.3s;
+}
+
+.social-links .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.btn-instagram {
+    background: #cc255c;
+    border-color: #cc255c;
+}
+
+.btn-black {
+    background: #000;
+    border-color: #000;
+}
+.owl-nav button {
+    background: rgba(42,93,132,0.9) !important;
+    color: white !important;
+    width: 40px;
+    height: 40px;
+    border-radius: 50% !important;
+}
+
+.owl-nav button span {
+    font-size: 28px;
+    line-height: 36px;
+}
+
+.project-card {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* أنماط البطاقة الثابتة */
+.project-card {
+    width: 300px; /* عرض ثابت */
+    height: 400px; /* ارتفاع ثابت */
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin: 15px auto; /* توسيط البطاقة */
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card img {
+    width: 100%;
+    height: 70%; /* 70% من ارتفاع البطاقة */
+    object-fit: cover;
+    object-position: center;
+    flex-shrink: 0;
+}
+
+.project-info {
+    height: 30%; /* 30% المتبقية */
+    padding: 1rem;
+    background: #2a5d84;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* تعديلات السلايدر للتكيف مع الأبعاد الثابتة */
+.owl-carousel .owl-stage {
+    display: flex;
+    justify-content: center;
+}
+
+.owl-carousel .owl-item {
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .project-card {
+        width: 300px;
+        height: 350px;
+    }
+}
+
+@media (max-width: 576px) {
+    .project-card {
+        width: 280px;
+        height: 330px;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="removebg-preview-head.png" alt="شعار ألفا" width="120">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-center " id="navbarNav">
+                <ul class="navbar-nav mb-2 mb-lg-0 text-center pe-0 ps-5 ms-4">
+                    <li class="nav-item"><a class="nav-link" href="#gallery">المعرض</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">الخدمات</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">اتصل بنا</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <!--<section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h1 class="display-4 fw-bold mb-4">ألفا الحديثة لأعمال التكييف</h1>
+                    <p class="lead">تأسيس وتنفيذ مشاريع التكييف المركزي باحترافية عالية</p>
+                </div>
+                <div class="col-md-6 text-center">
+                    <img src="Hero.avif" alt="شعار الشركة" class="img-fluid" style="max-width:400px; height:600px">
+                </div>
+            </div>
+        </div>
+    </section>-->
+
+
+
+
+    <section id="product" class=" hero-section hero-section-3 ptb-100">
+
+        <div class="circles">
+            <div class="point animated-point-1"></div>
+            <div class="point animated-point-2"></div>
+            <div class="point animated-point-3"></div>
+            <div class="point animated-point-4"></div>
+            <div class="point animated-point-5"></div>
+            <div class="point animated-point-6"></div>
+        </div>
+
+        <div class="container" id="animation-area-1">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                    <div class="hero-content section-title text-align-right text-lg-start my-5 mt-lg-0">
+                        <!--<span class="text-uppercase color-secondary fw-bold">أفضل جودة تصميم</span>-->
+                        <h1 class="fw-bold">ألفا الحديثة لأعمال التكييف</h1>
+
+                        <p class="lead ps-5  me-0">
+                            نحن متخصصون في دراسة وتصميم وتنفيذ مشاريع أنظمة التكييف، بما في ذلك مكيفات السبلت، المكيفات المخفية (الدكت)، وحدات الباكج، وأنظمة الشيلد ووتر.
+                        </p>
+                        <div class="action-btn mt-4">
+                            <!--<a href="#" class="btn solid-btn">احصل على خدماتنا</a>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-9 col-md-7 col-lg-5 offset-xl-1 align-self-sm-end">
+                    <div class="hero-img position-relative">
+                        <div class="image-bg-positioning text-center">
+                            <img src="Hero.avif" alt="" class="img-fluid" style="max-width:400px; height:500px; border-radius: 10px;">
+                        </div>
+                        <div class="animation-item d-none d-md-block d-lg-block">
+                            <div class="p-3 w-75 rounded-custom d-flex white-bg hero-animated-card-1">
+                                <p class="gr-text-11 mb-0 text-mirage-2">“اكتشف خبرتنا في تمديد وتركيب أنظمة التكييف المركزية.”</p>
+                                <div class="small-card-img ms-3">
+                                    <img src="mageforsale.jpg" alt="" width="80px" class="rounded-circle img-fluid">
+                                </div>
+                            </div>
+                            <div class="p-3 w-75 rounded-custom d-flex secondary-bg hero-animated-card-2">
+                                <div class="small-card-img text-white">
+                                    <img src="raw.jpg" alt="" width="60px" class="rounded-circle img-fluid">
+                                </div>
+                                <p class="gr-text-11 mb-0 text-white me-3 ">“ ضمان حلول تبريد فعّالة ومتكاملة.”</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section id="services" class="feature-section ptb-100">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-md-5" >
+                    <img src="banner.webp" alt="أنظمة التكييف" class="img-fluid" style="border-radius: 10px;">
+                </div>
+                <div class="col-md-7">
+                    <div class="feature-contents section-heading">
+                        <h2>خدماتنا المتكاملة في مجال التكييف</h2>
+                        <p class="lead">حلول متكاملة لأنظمة التبريد والتكييف بمعايير الجودة العالمية</p>
+
+                        <div class="feature-content-wrap">
+                            <ul class="nav nav-tabs feature-tab row" role="tablist">
+                                <!-- تبويبات الخدمات المعدلة -->
+                                <li class="nav-item feature-link col-md-4" role="presentation">
+                                    <a class="nav-link active" href="#tab-ac1" data-bs-toggle="tab">
+                                        <i class="fas fa-tools fa-2x mb-2"></i>
+                                        <h6>التركيب الاحترافي</h6>
+                                    </a>
+                                </li>
+                                <li class="nav-item feature-link col-md-4" role="presentation">
+                                    <a class="nav-link" href="#tab-ac2" data-bs-toggle="tab">
+                                        <i class="fas fa-wrench fa-2x mb-2"></i>
+                                        <h6>الصيانة الدورية</h6>
+                                    </a>
+                                </li>
+                                <li class="nav-item feature-link col-md-4" role="presentation">
+                                    <a class="nav-link" href="#tab-ac3" data-bs-toggle="tab">
+                                        <i class="fas fa-cogs fa-2x mb-2"></i>
+                                        <h6>أنظمة متكاملة</h6>
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <div class="tab-content feature-tab-content mt-4">
+                                <!-- محتوى التبويبات الجديدة -->
+                                <div class="tab-pane active" id="tab-ac1">
+                                    <div class="row">
+                                        <div class="col-md-6 mb-4" style="padding-right: 40px;">
+                                            <div class="d-flex align-items-start justify-content-between">
+                                                <i class="fas fa-compress-arrows-alt fa-2x text-primary ps-2"></i>
+                                                <div>
+                                                    <h5>تركيب أنظمة التكييف المركزي</h5>
+                                                    <p>تنفيذ مشاريع التكييف المركزية بأنظمة VRV و VRF المتطورة</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-4" style="padding-right: 40px;">
+                                            <div class="d-flex align-items-start justify-content-between">
+                                                <i class="fas fa-thermometer-half fa-2x text-primary ps-2"></i>
+                                                <div>
+                                                    <h5>أنظمة التدفئة المركزية</h5>
+                                                    <p>تصميم وتركيب أنظمة التدفئة الذكية للمباني الكبيرة</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane" id="tab-ac2">
+                                    <div class="row">
+                                        <div class="col-md-6 mb-4" style="padding-right: 40px;">
+                                            <div class="d-flex align-items-start justify-content-between">
+                                                <i class="fas fa-shield-alt fa-2x text-danger ps-2"></i>
+                                                <div>
+                                                    <h5>الصيانة الوقائية</h5>
+                                                    <p>برامج صيانة دورية لضمان الكفاءة التشغيلية الدائمة</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-4" style="padding-right: 40px;">
+                                            <div class="d-flex align-items-start justify-content-between">
+                                                <i class="fas fa-tools fa-2x text-danger ps-2"></i>
+                                                <div>
+                                                    <h5>الإصلاحات الطارئة</h5>
+                                                    <p>خدمة طوارئ 24/7 مع فرق فنية مؤهلة</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane" id="tab-ac3">
+                                    <div class="row">
+                                        <div class="col-md-6 mb-4" style="padding-right: 40px;">
+                                            <div class="d-flex align-items-start justify-content-between">
+                                                <i class="fas fa-brain fa-2x text-success ps-2"></i>
+                                                <div>
+                                                    <h5>أنظمة التحكم الذكية</h5>
+                                                    <p>أنظمة إدارة ذكية متكاملة مع تطبيقات الجوال</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-4" style="padding-right: 40px;">
+                                            <div class="d-flex align-items-start justify-content-between">
+                                                <i class="fas fa-leaf fa-2x text-success ps-2"></i>
+                                                <div>
+                                                    <h5>حلول موفرة للطاقة</h5>
+                                                    <p>أنظمة تكييف صديقة للبيئة مع شهادات كفاءة الطاقة</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- قسم لماذا نختارنا -->
+<section class="why-us ptb-100 bg-light">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="section-heading mb-5">
+                    <h2 class="text-primary">لماذا تختار ألفا الحديثة؟</h2>
+                    <div class="feature-icon-box mt-4">
+                        <div class="icon-box-item">
+                            <div class="icon-box-wrapper">
+                                <div class="icon-wrapper">
+                                    <i class="fas fa-award fa-3x text-warning"></i>
+                                </div>
+                                <div class="content-wrapper">
+                                    <h4>خبرة 15+ سنة</h4>
+                                    <p>تراكمت خبرتنا عبر تنفيذ أكثر من 500 مشروع تكييف مركزي</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="icon-box-item">
+                            <div class="icon-box-wrapper">
+                                <div class="icon-wrapper">
+                                    <i class="fas fa-users-cog fa-3x text-danger"></i>
+                                </div>
+                                <div class="content-wrapper">
+                                    <h4>فريق هندسي متخصص</h4>
+                                    <p>فريق معتمد من كبرى الشركات العالمية (دايكين، إل جي)</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="icon-box-item">
+                            <div class="icon-box-wrapper">
+                                <div class="icon-wrapper">
+                                    <i class="fas fa-shield-alt fa-3x text-success"></i>
+                                </div>
+                                <div class="content-wrapper">
+                                    <h4>ضمان حتى 5 سنوات</h4>
+                                    <p>أنظمة ضمان شاملة مع عقود صيانة دورية</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6">
+                <div class="about-content">
+                    <h3 class="mb-4">حول مؤسسة ألفا الحديثة</h3>
+                    <p class="lead">الريادة في حلول التكييف المركزي منذ 2005</p>
+                    <ul class="about-list">
+                        <li>
+                            <i class="fas fa-check-circle text-primary me-2"></i>
+                            أول مؤسسة سعودية معتمدة في أنظمة VRV/VRF
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle text-primary me-2"></i>
+                            شهادات جودة عالمية (ISO 9001، ISO 14001)
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle text-primary me-2"></i>
+                            تنفيذ مشاريع تصل إلى 50,000 م²
+                        </li>
+                    </ul>
+                    <div class="achievement-box mt-4">
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="counter-item">
+                                    <h2 class="counter">500+</h2>
+                                    <p>مشروع منفذ</p>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="counter-item">
+                                    <h2 class="counter">98%</h2>
+                                    <p>رضا العملاء</p>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="counter-item">
+                                    <h2 class="counter">24/7</h2>
+                                    <p>دعم فني</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- معرض الصور المحسّن -->
+<!-- <section id="gallery" class="gallery-section ptb-100">
+    <div class="container">
+        <div class="section-heading text-center mb-5">
+            <h2 class="mb-3">مشاريعنا البارزة</h2>
+            <p class="lead">شاهد أبرز أعمالنا في مجال التكييف المركزي</p>
+        </div>
+         <div class="owl-carousel grid-carousel">
+            <div class="item">
+        <div class="row g-4" id="imageGallery">
+          
+        </div>
+            </div>
+         </div>
+       
+    </div>
+</section> -->
+<section id="gallery" class="gallery-section ptb-100" style="direction: ltr;">
+    <div class="container">
+        <div class="section-heading text-center mb-5">
+            <h2 class="mb-3">مشاريعنا البارزة</h2>
+            <p class="lead">شاهد أبرز أعمالنا في مجال التكييف المركزي</p>
+        </div>
+        
+        <!-- التعديل الأساسي هنا -->
+        <div class="owl-carousel gallery-carousel" style="width: 100%;" id="imageGallery">
+            <!-- سيتم إضافة الصور عبر الجافاسكريبت -->
+        </div>
+
+    </div>
+</section>
+<!-- قسم العملاء -->
+<section class="client-section ptb-100">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="section-heading text-center mb-5">
+                    <h2>شركاء النجاح</h2>
+                    <p class="lead">الثقة التي حصلنا عليها من كبرى المؤسسات</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-12">
+                <div class="owl-carousel clients-carousel">
+                    <!-- شعارات العملاء المعدلة -->
+                    <div class="client-item">
+                        <img src="general-logo-png-transparent.png" alt="ميتسوبيشي" class="img-fluid">
+                    </div>
+                     <div class="client-item">
+                        <img src="gery.png" alt="ميتسوبيشي" class="img-fluid">
+                    </div>
+                    <div class="client-item">
+                        <img src="beken-removebg-preview.png" alt="دايكين" class="img-fluid">
+                    </div>
+                    <div class="client-item">
+                        <img src="lg (2).png" alt="إل جي" class="img-fluid">
+                    </div>
+                    <div class="client-item">
+                        <img src="OA68Mwms7nn2yAxuJIs8cLNUxWngpcsP4np3ClAV11.png" alt="أرامكو" class="img-fluid">
+                    </div>
+                    <div class="client-item">
+                        <img src="carrier-removebg-preview.png" alt="سابك" class="img-fluid">
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+        
+        <div class="trust-badge mt-5 text-center">
+            <div class="d-inline-block px-4 py-2 rounded-pill bg-primary text-white">
+                <i class="fas fa-certificate me-2"></i>
+                معتمد من الهيئة السعودية للمقاولين
+            </div>
+        </div>
+    </div>
+</section>
+<!-- قسم التواصل المحسّن -->
+<section id="contact" class="contact-info-section ptb-100 text-white" style="background:linear-gradient(to bottom,#9bb4ca,#6c757d)">
+    <div class="container">
+        <div class="row g-5">
+            
+            <!-- معلومات الاتصال -->
+            <div class="col-lg-4">
+                <div class="contact-box">
+                   <div class="brand-info">
+                    <img src="removebg-preview-head.png" alt="شعار ألفا" width="150" class="mb-3">
+                    <p class="mb-0">الريادة في حلول التكييف المركزي منذ 2005</p>
+                </div>
+                    <ul class="list-unstyled pe-0">
+                        <li class="mb-3">
+                            <i class="fas fa-map-marker-alt fa-fw me-2"></i>
+                            مكة المكرمة - حي الرصيفة - بجوار برج السلوى
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-clock fa-fw me-2"></i>
+                            ساعات العمل: 9 صباحًا - 12 ظهرًا | 5 مساءً - 9 مساءً
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-phone fa-fw me-2"></i>
+                            920007376 - 0125339090
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-envelope fa-fw me-2"></i>
+                            info@alfamodern.com
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- الوسائط الاجتماعية -->
+            <div class="col-lg-4">
+                <div class="social-media-box">
+                    <h3 class="mb-4 border-bottom pb-3 text-center">تابعنا على</h3>
+                    <div class="social-links row g-3">
+                        <div class="col-6">
+                            <a href="https://api.whatsapp.com/send?phone=966501230600" 
+                               class="btn btn-success w-100">
+                               <i class="fab fa-whatsapp"></i> واتساب
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <a href="https://www.instagram.com/modern.alpha.sa" 
+                               class="btn btn-instagram w-100">
+                               <i class="fab fa-instagram"></i> إنستغرام
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <a href="https://x.com/Alfa_Modern_AC" 
+                               class="btn btn-dark w-100">
+                               <i class="fab fa-x-twitter"></i> تويتر
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <a href="https://www.facebook.com/ALPHA.AL.HADITHA" 
+                               class="btn btn-primary w-100">
+                               <i class="fab fa-facebook"></i> فيسبوك
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <a href="https://www.tiktok.com/@alfa.modern" 
+                               class="btn border w-100">
+                               <i class="fab fa-tiktok"></i> تيك توك
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <a href="https://maps.app.goo.gl/mHy3uX9q1KB2xKgFA" 
+                               class="btn btn-danger w-100">
+                               <i class="fas fa-map-marker-alt"></i> خرائط جوجل
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- المعلومات القانونية -->
+            <div class="col-lg-4">
+                <div class="legal-info">
+                    <h3 class="mb-4 border-bottom pb-3 text-center">معلومات قانونية</h3>
+                    <div class="mb-3">
+                        <strong>السجل التجاري:</strong> 4031251186
+                    </div>
+                    <div class="mb-3">
+                        <strong>الرقم الضريبي:</strong> 310959984700003
+                    </div>
+                    <div class="mb-3">
+                        <a href="https://eauthenticate.saudibusiness.gov.sa/inquiry?certificateRefID=0000106785" 
+                           class="text-white">
+                           <i class="fas fa-certificate"></i> توثيق التجارة الإلكترونية
+                        </a>
+                    </div>
+                    <div>
+                        <a href="https://maroof.sa/businesses/details/357061" 
+                           class="text-white">
+                           <i class="fas fa-check-circle"></i> منصة معروف
+                        </a>
+                    </div>
+                </div>
+            </div>
+             <div class="border-top pt-4 mt-4 text-center">
+            <p class="mb-0">
+                © 2025 ألفا الحديثة. جميع الحقوق محفوظة 
+                <span class="mx-2">|</span>
+                تصميم وتطوير <a href="#" class="text-white">فريق ألفا</a>
+            </p>
+        </div>
+        </div>
+    </div>
+</section>
+<!-- التذييل المعدل -->
+<!-- <footer class="footer bg-secondary text-white pt-5">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-md-4">
+                <div class="brand-info">
+                    <img src="removebg-preview-head.png" alt="شعار ألفا" width="150" class="mb-3">
+                    <p class="mb-0">الريادة في حلول التكييف المركزي منذ 2005</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <h5>الروابط المهمة</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2">
+                        <a href="#gallery" class="nav-link p-0 text-white">المعرض</a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#services" class="nav-link p-0 text-white">الخدمات</a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="#contact" class="nav-link p-0 text-white">اتصل بنا</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-md-4">
+                <h5>الاشتراك في النشرة</h5>
+                <form class="newsletter-form">
+                    <input type="email" class="form-control mb-2" placeholder="بريدك الإلكتروني">
+                    <button type="submit" class="btn btn-primary w-100">
+                        اشترك الآن
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="border-top pt-4 mt-4 text-center">
+            <p class="mb-0">
+                © 2025 ألفا الحديثة. جميع الحقوق محفوظة 
+                <span class="mx-2">|</span>
+                تصميم وتطوير <a href="#" class="text-white">فريق ألفا</a>
+            </p>
+        </div>
+    </div>
+</footer> -->
+
+
+
+    <!-- Gallery Section -->
+    <!-- <section id="gallery" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">📸 معرض أعمالنا</h2>
+            <div class="row g-4" id="imageGallery"></div>
+        </div>
+    </section> -->
+
+    <!-- Services Section -->
+    <!-- <section id="services" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">🔧 خدماتنا</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 shadow">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-tools me-2"></i>تركيب الأنظمة</h5>
+                            <p>تركيب أنظمة التكييف المركزية باحدث التقنيات</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-wrench me-2"></i>الصيانة الدورية</h5>
+                            <p>عقود صيانة سنوية بشروط مميزة</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-cogs me-2"></i>التشغيل المتكامل</h5>
+                            <p>أنظمة تشغيل ذكية متكاملة</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Contact Section -->
+    <!-- <footer id="contact">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h4>عن الشركة</h4>
+                    <p>شركة رائدة في مجال أنظمة التكييف المركزي منذ 2005</p>
+                    <img src="removebg-preview-head.png" alt="شعار" width="120">
+                </div>
+
+                <div class="col-md-4">
+                    <h4>روابط سريعة</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#gallery" class="text-white text-decoration-none">المعرض</a></li>
+                        <li><a href="#services" class="text-white text-decoration-none">الخدمات</a></li>
+                        <li><a href="#contact" class="text-white text-decoration-none">اتصل بنا</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4">
+                    <h4>معلومات الاتصال</h4>
+                    <ul class="list-unstyled contact-info">
+                        <li><i class="fas fa-map-marker-alt me-2"></i>مكة المكرمة - حي الرصيفة</li>
+                        <li><i class="fas fa-phone me-2"></i>+966 50 070 6436</li>
+                        <li><i class="fas fa-envelope me-2"></i>info@alphamodernsa.com</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="text-center mt-5 pt-3 border-top">
+                <p class="mb-0">© 2024 ألفا الحديثة. جميع الحقوق محفوظة</p>
+            </div>
+        </div>
+    </footer> -->
+
+    
+
+</body>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/owl.carousel.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function initOwlCarousel() {
+    $('.gallery-carousel').owlCarousel({
+        loop: true,
+        margin: 20,
+        nav: true,
+        dots: true,
+        autoplay: true,
+        responsive: {
+            0: { 
+                items: 1,
+                stagePadding: 20 // إضافة مسافة جانبية على الهواتف
+            },
+            768: { 
+                items: 2,
+            },
+            1200: { 
+                items: 3,
+            }
+        }
+    });
+}
+        const backendUrl = 'https://gallary-alpha.vercel.app';
+
+        fetch(`${backendUrl}/images`)
+            .then(res => res.json())
+            .then(images => {
+                const container = document.getElementById('imageGallery');
+                images.forEach(img => {
+                    const col = document.createElement('div');
+                    col.className = '';
+                    col.innerHTML = `
+                                <div class="card shadow-sm h-100">
+                                    <img src="${img.secure_url}" class="gallery-img card-img-top" alt="عمل الشركة">
+                                </div>
+                            `;
+                    container.appendChild(col);
+                });
+                initOwlCarousel();
+            })
+            .catch(err => console.error('حدث خطأ في تحميل الصور:', err));
+ $('.clients-carousel').owlCarousel({
+     autoplay: true,
+     loop: true,
+     margin: 15,
+     dots: true,
+     slideTransition: 'linear',
+     autoplayTimeout: 4500,
+     autoHoverPause: true,
+     autoplaySpeed: 4500,
+     smartSpeed: 900,
+     responsive: {
+         0: {
+             items: 2
+         },
+         500: {
+             items: 3
+         },
+         600: {
+             items: 4
+         },
+         800: {
+             items: 5
+         },
+         1200: {
+             items: 6
+         },
+     }
+ });
+            // document.addEventListener('DOMContentLoaded', loadImages);
+    </script>
+</html>
