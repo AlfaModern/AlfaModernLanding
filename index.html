@@ -185,6 +185,27 @@
         height: 330px;
     }
 }
+.payment-methods {
+    direction: rtl;
+}
+
+.payment-card {
+    background: white;
+    transition: all 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.payment-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.payment-card .icon-wrapper {
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    display: inline-block;
+}
 
     </style>
 </head>
@@ -323,7 +344,7 @@
                                                 <i class="fas fa-compress-arrows-alt fa-2x text-primary ps-2"></i>
                                                 <div>
                                                     <h5>تركيب أنظمة التكييف المركزي</h5>
-                                                    <p>تنفيذ مشاريع التكييف المركزية بأنظمة VRV و VRF المتطورة</p>
+                                                    <p>تنفيذ مشاريع التكييف المركزية باستخدام أنظمة الشيلر، ووحدات التكييف الباكج، والكونسيلد، وأنظمة التهوية الحديثة.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -445,8 +466,7 @@
                     <ul class="about-list">
                         <li>
                             <i class="fas fa-check-circle text-primary me-2"></i>
-                            أول مؤسسة سعودية معتمدة في أنظمة VRV/VRF
-                        </li>
+مؤسسة سعودية معتمدة في أنظمة الشيلر، ووحدات الباكج، والكونسيلد، وأنظمة التهوية والتكييف المتقدمة.                        </li>
                         <li>
                             <i class="fas fa-check-circle text-primary me-2"></i>
                             شهادات جودة عالمية (ISO 9001، ISO 14001)
@@ -563,6 +583,76 @@
         </div>
     </div>
 </section>
+
+<!-- قسم طرق الدفع -->
+<section class="payment-methods ptb-100 bg-light">
+    <div class="container">
+        <div class="section-heading text-center mb-5">
+            <h2 class="text-primary">طرق الدفع المتاحة</h2>
+            <p class="lead">نوفر لك خيارات دفع متنوعة وآمنة</p>
+        </div>
+
+        <div class="row justify-content-center g-4">
+            <!-- كاش -->
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="payment-card text-center p-3 rounded-3">
+                    <div class="icon-wrapper mb-3">
+                        <i class="fas fa-money-bill-wave fa-3x text-success"></i>
+                    </div>
+                    <h5 class="mb-0">دفع كاش</h5>
+                </div>
+            </div>
+
+            <!-- مدى -->
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="payment-card text-center p-3 rounded-3">
+                    <div class="icon-wrapper mb-3">
+                        <i class="fab fa-cc-visa fa-3x text-primary"></i>
+                    </div>
+                    <h5 class="mb-0">مدى</h5>
+                </div>
+            </div>
+
+            <!-- تابي -->
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="payment-card text-center p-3 rounded-3">
+                    <div class="icon-wrapper mb-3">
+                        <i class="fas fa-mobile-alt fa-3x text-info"></i>
+                    </div>
+                    <h5 class="mb-0">تابي</h5>
+                </div>
+            </div>
+
+            <!-- تمارا -->
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="payment-card text-center p-3 rounded-3">
+                    <div class="icon-wrapper mb-3">
+                        <i class="fas fa-qrcode fa-3x text-warning"></i>
+                    </div>
+                    <h5 class="mb-0">تمارا</h5>
+                </div>
+            </div>
+
+            <!-- تحويل بنكي -->
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="payment-card text-center p-3 rounded-3">
+                    <div class="icon-wrapper mb-3">
+                        <i class="fas fa-university fa-3x text-danger"></i>
+                    </div>
+                    <h5 class="mb-0">تحويل بنكي</h5>
+                </div>
+            </div>
+        </div>
+
+        <!-- ملاحظات الدفع -->
+        <div class="payment-notes mt-5 text-center">
+            <div class="alert alert-secondary d-inline-block">
+                <i class="fas fa-info-circle me-2"></i>
+                جميع عمليات الدفع مؤمنة 
+            </div>
+        </div>
+    </div>
+</section>
 <!-- قسم التواصل المحسّن -->
 <section id="contact" class="contact-info-section ptb-100 text-white" style="background:linear-gradient(to bottom,#9bb4ca,#6c757d)">
     <div class="container">
@@ -603,37 +693,43 @@
                     <div class="social-links row g-3">
                         <div class="col-6">
                             <a href="https://api.whatsapp.com/send?phone=966501230600" 
-                               class="btn btn-success w-100">
+                               class="btn btn-success w-100" target="_blank"
+   rel="noopener noreferrer">
                                <i class="fab fa-whatsapp"></i> واتساب
                             </a>
                         </div>
                         <div class="col-6">
                             <a href="https://www.instagram.com/modern.alpha.sa" 
-                               class="btn btn-instagram w-100">
+                               class="btn btn-instagram w-100" target="_blank"
+   rel="noopener noreferrer">
                                <i class="fab fa-instagram"></i> إنستغرام
                             </a>
                         </div>
                         <div class="col-6">
                             <a href="https://x.com/Alfa_Modern_AC" 
-                               class="btn btn-dark w-100">
+                               class="btn btn-dark w-100" target="_blank"
+   rel="noopener noreferrer">
                                <i class="fab fa-x-twitter"></i> تويتر
                             </a>
                         </div>
                         <div class="col-6">
                             <a href="https://www.facebook.com/ALPHA.AL.HADITHA" 
-                               class="btn btn-primary w-100">
+                               class="btn btn-primary w-100" target="_blank"
+   rel="noopener noreferrer">
                                <i class="fab fa-facebook"></i> فيسبوك
                             </a>
                         </div>
                         <div class="col-6">
                             <a href="https://www.tiktok.com/@alfa.modern" 
-                               class="btn border w-100">
+                               class="btn border w-100" target="_blank"
+   rel="noopener noreferrer">
                                <i class="fab fa-tiktok"></i> تيك توك
                             </a>
                         </div>
                         <div class="col-6">
                             <a href="https://maps.app.goo.gl/mHy3uX9q1KB2xKgFA" 
-                               class="btn btn-danger w-100">
+                               class="btn btn-danger w-100" target="_blank"
+   rel="noopener noreferrer">
                                <i class="fas fa-map-marker-alt"></i> خرائط جوجل
                             </a>
                         </div>
@@ -653,13 +749,15 @@
                     </div>
                     <div class="mb-3">
                         <a href="https://eauthenticate.saudibusiness.gov.sa/inquiry?certificateRefID=0000106785" 
-                           class="text-white">
+                           class="text-white" target="_blank"
+   rel="noopener noreferrer">
                            <i class="fas fa-certificate"></i> توثيق التجارة الإلكترونية
                         </a>
                     </div>
                     <div>
                         <a href="https://maroof.sa/businesses/details/357061" 
-                           class="text-white">
+                           class="text-white" target="_blank"
+   rel="noopener noreferrer">
                            <i class="fas fa-check-circle"></i> منصة معروف
                         </a>
                     </div>
@@ -705,7 +803,8 @@
                 <h5>الاشتراك في النشرة</h5>
                 <form class="newsletter-form">
                     <input type="email" class="form-control mb-2" placeholder="بريدك الإلكتروني">
-                    <button type="submit" class="btn btn-primary w-100">
+                    <button type="submit" class="btn btn-primary w-100" target="_blank"
+   rel="noopener noreferrer">
                         اشترك الآن
                     </button>
                 </form>
